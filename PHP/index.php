@@ -72,7 +72,7 @@ if (empty($_POST['Languages'])) {
     $errors = TRUE;
 }
 
-$availableLanguages = array('Pascal', 'C', 'C_plus_plus', 'JavaScript', 'PHP', 'Python', 'Java', 'Haskel', 'Clojure', 'Prolog', 'Scala');
+$availableLanguages = array('Pascal', 'C', 'C_plus_plus', 'JavaScript', 'PHP', 'Python', 'Java', 'Haskel');
 
 foreach ($_POST['Languages'] as $language) {
     if (!in_array($language, $availableLanguages)) {
