@@ -59,7 +59,7 @@ else {
 
   // TODO: Проверть есть ли такой логин и пароль в базе данных.
   // Выдать сообщение об ошибках.
-  $db = new PDO('mysql:host=localhost;dbname=u67438', 'u67438', '9231297', array(PDO::ATTR_PERSISTENT => true));
+  $db = new PDO('mysql:host=localhost;dbname=u67438', 'u67451', '5546450', array(PDO::ATTR_PERSISTENT => true));
   $stmt = $db->prepare("SELECT id, pass FROM login_pass WHERE login = ?");
   $stmt -> execute([$_POST['login']]);
   $row = $stmt->fetch(PDO::FETCH_ASSOC);
