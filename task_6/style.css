@@ -1,0 +1,205 @@
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f0f0f0; 
+}
+
+.fon1 {
+    background-color: #fff; 
+    padding: 20px; 
+}
+
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+label {
+    font-weight: bold; 
+}
+
+.submit {
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+.submit:hover {
+    background-color: #0056b3; 
+}
+.error {
+    border-color: red; 
+}
+
+input[name="names"] {
+    border: 1px solid #ced4da; 
+    border-radius: 4px; 
+    padding: 8px; 
+    width: 100%; 
+    box-sizing: border-box; 
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; 
+}
+
+
+input[name="names"]:focus {
+    border-color: #80bdff; 
+    outline: 0; 
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+}
+
+
+input[name="names"][names="error"] {
+    border-color: red; 
+}
+
+.fon1 {
+    background-color: #fff; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+}
+
+
+.table-container {
+    background-color: #fff; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+
+.table-container h2 {
+    margin-top: 0; 
+}
+
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-bottom: 20px; 
+}
+
+
+table th {
+    padding: 10px; 
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+}
+
+
+table td {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+}
+
+
+.action-buttons {
+    text-align: center; 
+}
+
+
+.action-buttons .delete-button {
+    background-color: #dc3545; 
+    color: #fff; 
+    padding: 8px 16px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+
+.action-buttons .delete-button:hover {
+    background-color: #c82333; 
+}
+
+
+.action-buttons .edit-button {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+
+.action-buttons .edit-button:hover {
+    background-color: #0056b3; 
+}
+
+.edit-user-form {
+    max-width: 600px; 
+    margin: 0 auto; 
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.edit-user-form label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+.edit-user-form input[type="text"],
+.edit-user-form input[type="tel"],
+.edit-user-form input[type="email"],
+.edit-user-form input[type="date"],
+.edit-user-form textarea,
+.edit-user-form select {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+}
+
+.edit-user-form select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.edit-user-form textarea {
+    min-height: 100px; 
+}
+
+.edit-user-form input[type="submit"] {
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+.edit-user-form input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+.edit-user-form .delete-button {
+    background-color: #dc3545; 
+}
+
+.edit-user-form .delete-button:hover {
+    background-color: #c82333; 
+}
