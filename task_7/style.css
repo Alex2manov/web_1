@@ -15,7 +15,7 @@ input[type="email"],
 input[type="date"],
 textarea,
 select {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -54,7 +54,7 @@ input[name="names"] {
     border: 1px solid #ced4da;
     border-radius: 4px;
     padding: 8px;
-    width: 100%;
+    width: 50%;
     box-sizing: border-box;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -87,7 +87,7 @@ input[name="names"][names="error"] {
 }
 
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
@@ -157,7 +157,7 @@ table td {
 .edit-user-form input[type="date"],
 .edit-user-form textarea,
 .edit-user-form select {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
