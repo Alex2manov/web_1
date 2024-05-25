@@ -1,162 +1,153 @@
-
 body {
-    font-family: Arial, sans-serif; /* Шрифт для всего документа */
-    background-color: #f0f0f0; /* Цвет фона */
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
 }
 
 .fon1 {
-    background-color: #fff; /* Цвет фона блока формы */
-    padding: 20px; /* Внутренний отступ */
+    background-color: #e9e9e9;
+    padding: 20px;
 }
 
-/* Общие стили для всех input и textarea */
 input[type="text"],
 input[type="tel"],
 input[type="email"],
 input[type="date"],
 textarea,
 select {
-    width: 100%; /* Ширина элементов ввода */
-    padding: 10px; /* Внутренний отступ */
-    margin-bottom: 15px; /* Отступ между элементами */
-    border: 1px solid #ccc; /* Граница */
-    border-radius: 5px; /* Закругление углов */
-    box-sizing: border-box; /* Учитываем границы в общей ширине */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin-right: 5px; /* Отступ между радио- и чекбоксами и текстом */
+    margin-right: 5px;
 }
 
 label {
-    font-weight: bold; /* Жирный шрифт для меток */
+    font-weight: bold;
 }
 
 .submit {
-    padding: 10px 20px; /* Внутренний отступ кнопки */
-    background-color: #007bff; /* Цвет фона кнопки */
-    color: #fff; /* Цвет текста кнопки */
-    border: none; /* Убираем границу */
-    border-radius: 5px; /* Закругление углов */
-    cursor: pointer; /* Курсор при наведении */
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .submit:hover {
-    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+    background-color: #3e8e41;
 }
+
 .error {
-    border-color: red; /* Красная рамка для элементов с ошибкой */
+    border-color: red;
 }
-/* Стили для поля с ФИО */
+
 input[name="names"] {
-    border: 1px solid #ced4da; /* Цвет границы поля */
-    border-radius: 4px; /* Закругление углов */
-    padding: 8px; /* Внутренний отступ */
-    width: 100%; /* Ширина поля */
-    box-sizing: border-box; /* Учитываем границы в общей ширине */
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Плавное изменение цвета границы */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* Стили для поля с ФИО при фокусе */
 input[name="names"]:focus {
-    border-color: #80bdff; /* Цвет границы при фокусе */
-    outline: 0; /* Убираем стандартное выделение при фокусе */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Тень при фокусе */
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* Стили для поля с ФИО при вводе неправильного значения */
 input[name="names"][names="error"] {
-    border-color: red; /* Красная граница при ошибке */
+    border-color: red;
 }
-/* Стили для блока с данными пользователя */
+
 .fon1 {
-    background-color: #fff; /* Цвет фона блока формы */
-    padding: 20px; /* Внутренний отступ */
-    margin-bottom: 20px; /* Отступ снизу */
+    background-color: #e9e9e9;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-/* Стили для таблицы с данными и статистикой */
 .table-container {
-    background-color: #fff; /* Цвет фона */
-    padding: 20px; /* Внутренний отступ */
-    border: 1px solid #ccc; /* Граница */
-    border-radius: 5px; /* Закругление углов */
+    background-color: #e9e9e9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Стили для заголовка таблицы */
 .table-container h2 {
-    margin-top: 0; /* Убираем отступ сверху */
+    margin-top: 0;
 }
 
-/* Стили для таблицы */
 table {
-    width: 100%; /* Ширина таблицы */
-    border-collapse: collapse; /* Убираем разделительные линии */
-    margin-bottom: 20px; /* Отступ снизу */
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-/* Стили для заголовков таблицы */
 table th {
-    padding: 10px; /* Внутренний отступ */
-    background-color: #f0f0f0; /* Цвет фона */
-    border: 1px solid #ccc; /* Граница */
+    padding: 10px;
+    background-color: #e9e9e9;
+    border: 1px solid #ccc;
 }
 
-/* Стили для ячеек таблицы */
 table td {
-    padding: 10px; /* Внутренний отступ */
-    border: 1px solid #ccc; /* Граница */
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
-/* Стили для кнопок управления в таблице */
 .action-buttons {
-    text-align: center; /* Выравнивание по центру */
+    text-align: center;
 }
 
-/* Стили для кнопки удаления */
 .action-buttons .delete-button {
-    background-color: #dc3545; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    padding: 8px 16px; /* Внутренний отступ */
-    border: none; /* Убираем границу */
-    border-radius: 5px; /* Закругление углов */
-    cursor: pointer; /* Курсор при наведении */
-    transition: background-color 0.3s; /* Плавное изменение цвета фона */
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-/* Стили для кнопки удаления при наведении */
 .action-buttons .delete-button:hover {
-    background-color: #c82333; /* Цвет фона при наведении */
+    background-color: #c0392b;
 }
 
-/* Стили для кнопки редактирования */
 .action-buttons .edit-button {
-    background-color: #007bff; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    padding: 5px 10px; /* Внутренний отступ */
-    border: none; /* Убираем границу */
-    border-radius: 5px; /* Закругление углов */
-    cursor: pointer; /* Курсор при наведении */
+    background-color: #337ab7;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-/* Стили для кнопки редактирования при наведении */
 .action-buttons .edit-button:hover {
-    background-color: #0056b3; /* Цвет фона при наведении */
+    background-color: #23527c;
 }
 
 .edit-user-form {
-    max-width: 600px; /* Ограничиваем ширину формы */
-    margin: 0 auto; /* Центрируем форму на странице */
-    background-color: #fff; /* Цвет фона формы */
-    padding: 20px; /* Внутренний отступ формы */
-    border-radius: 5px; /* Закругляем углы формы */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем тень для формы */
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .edit-user-form label {
-    display: block; /* Делаем метки блочными элементами */
-    margin-bottom: 5px; /* Добавляем небольшой отступ снизу к меткам */
+    display: block;
+    margin-bottom: 5px;
 }
 
 .edit-user-form input[type="text"],
@@ -165,41 +156,42 @@ table td {
 .edit-user-form input[type="date"],
 .edit-user-form textarea,
 .edit-user-form select {
-    width: 100%; /* Ширина элементов ввода */
-    padding: 10px; /* Внутренний отступ */
-    margin-bottom: 15px; /* Отступ между элементами */
-    border: 1px solid #ccc; /* Граница */
-    border-radius: 5px; /* Закругление углов */
-    box-sizing: border-box; /* Учитываем границы в общей ширине */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .edit-user-form select {
-    appearance: none; /* Убираем стандартные стили для выпадающего списка */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 
 .edit-user-form textarea {
-    min-height: 100px; /* Минимальная высота текстового поля */
+    min-height: 100px;
 }
 
 .edit-user-form input[type="submit"] {
-    padding: 10px 20px; /* Внутренний отступ кнопки */
-    background-color: #007bff; /* Цвет фона кнопки */
-    color: #fff; /* Цвет текста кнопки */
-    border: none; /* Убираем границу */
-    border-radius: 5px; /* Закругление углов */
-    cursor: pointer; /* Курсор при наведении */
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .edit-user-form input[type="submit"]:hover {
-    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+    background-color: #3e8e41;
 }
 
 .edit-user-form .delete-button {
-    background-color: #dc3545; /* Цвет фона кнопки удаления */
+    background-color: #e74c3c;
 }
 
 .edit-user-form .delete-button:hover {
-    background-color: #c82333; /* Цвет фона кнопки удаления при наведении */
+    background-color: #c0392b;
 }
