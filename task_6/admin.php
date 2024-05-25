@@ -21,7 +21,7 @@ if (empty($_SERVER['PHP_AUTH_USER']) ||
 }
 
 // Подключение к базе данных и выполнение запросов
-$db = new PDO('mysql:host=localhost;dbname=u67438', 'u67438', '9231297', array(PDO::ATTR_PERSISTENT => true));
+$db = new PDO('mysql:host=localhost;dbname=u67451', 'u67451', '5546450', array(PDO::ATTR_PERSISTENT => true));
 
 // Извлечение данных пользователей
 $stmt = $db->query("SELECT * FROM application");
