@@ -9,42 +9,27 @@
 
 <body>
 <?php
-/**
- * Файл login.php для не авторизованного пользователя выводит форму логина.
- * При отправке формы проверяет логин/пароль и создает сессию,
- * записывает в нее логин и id пользователя.
- * После авторизации пользователь перенаправляется на главную страницу
- * для изменения ранее введенных данных.
- **/
 
 header('Content-Type: text/html; charset=UTF-8');
 
-// Начинаем сессию.
 session_start();
 
-// Если есть логин в сессии, то пользователь уже авторизован.
 if (!empty($_SESSION['login'])) {
-  // Проверяем запрос на выход из системы
   if (!empty($_POST['logout'])) {
     session_destroy();
     header('Location: ./login.php');
     exit();
   } else {
-    // Пользователь уже авторизован, перенаправляем его на главную страницу
     header('Location: ./');
     exit();
   }
 }
 
-// В суперглобальном массиве $_SERVER PHP сохраняет некторые заголовки запроса HTTP
-// и другие сведения о клиенте и сервере, например метод текущего запроса $_SERVER['REQUEST_METHOD'].
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-  // Генерация CSRF-токена при GET-запросе
   if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
   }
 
-  // Сообщения об ошибках
   if (!empty($_GET['nologin'])) {
     echo "<div>Пользователя с таким логином не существует</div>";
   }
@@ -62,12 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 <?php
 } else {
-  // Проверка CSRF-токена при POST-запросе
   if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
     die('Неверный CSRF-токен.');
   }
 
-  // Проверка логина и пароля в базе данных
   $db = new PDO('mysql:host=localhost;dbname=u67451', 'u67451', '5546450', array(PDO::ATTR_PERSISTENT => true));
   $stmt = $db->prepare("SELECT id, pass FROM login_pass WHERE login = ?");
   $stmt->execute([$_POST['login']]);
@@ -83,11 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     exit();
   }
 
-  // Авторизация пользователя
   $_SESSION['login'] = htmlspecialchars($_POST['login']);
   $_SESSION['uid'] = $row["id"];
 
-  // Перенаправление на главную страницу
   header('Location: ./');
 }
 ?>
