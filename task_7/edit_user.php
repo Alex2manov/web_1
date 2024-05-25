@@ -1,5 +1,4 @@
 <?php
-// Подключение к базе данных
 try {
     $db = new PDO('mysql:host=localhost;dbname=u67451', 'u67451', '5546450', array(PDO::ATTR_PERSISTENT => true));
 } catch (PDOException $e) {
@@ -7,39 +6,33 @@ try {
     exit();
 }
 
-// Начало сессии для защиты CSRF
 session_start();
 
-// Проверка, был ли передан параметр id через GET-запрос
+
 if (!isset($_GET['id'])) {
     echo "Ошибка: ID пользователя не указан.";
     exit();
 }
 
-// Генерация CSRF-токена
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-// Получение данных о пользователе по его ID
 $stmt = $db->prepare("SELECT * FROM application WHERE id = ?");
 $stmt->execute([$_GET['id']]);
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Если пользователь с указанным ID не найден
 if (!$userData) {
     echo "Пользователь с указанным ID не найден.";
     exit();
 }
 
-// Если форма была отправлена для обновления
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
     // Проверка CSRF-токена
     if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         die('Неверный CSRF-токен.');
     }
 
-    // Обработка данных формы и обновление данных пользователя в базе данных
     $stmt = $db->prepare("UPDATE application SET names = ?, phones = ?, email = ?, dates = ?, gender = ?, biography = ? WHERE id = ?");
     $stmt->execute([
         htmlspecialchars($_POST['names']),
@@ -55,21 +48,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
     exit();
 }
 
-// Если форма была отправлена для удаления
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
-    // Проверка CSRF-токена
     if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         die('Неверный CSRF-токен.');
     }
 
-    // Получаем идентификатор пользователя, которого нужно удалить
     $userId = $_GET['id'];
 
-    // Удаление связанных записей из таблицы application_languages
     $stmt = $db->prepare("DELETE FROM application_languages WHERE id_app = ?");
     $stmt->execute([$userId]);
 
-    // Затем удаляем пользователя из таблицы application
     $stmt = $db->prepare("DELETE FROM application WHERE id = ?");
     $stmt->execute([$userId]);
 
