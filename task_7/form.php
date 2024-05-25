@@ -20,7 +20,7 @@
   ?>
 
   <div class="container">
-    <h2>Контактная форма</h2>
+    <h2>КОНТАКТНАЯ ФОРМА</h2>
     <form action="" method="POST">
       <!-- CSRF-токен -->
       <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
