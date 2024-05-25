@@ -228,7 +228,7 @@ else {
         setcookie('pass', $pass);
 
         // Сохранение данных формы, логина и хеш md5() пароля в базу данных.
-        $db = new PDO('mysql:host=localhost;dbname=u67438', 'u67438', '9231297', array(PDO::ATTR_PERSISTENT => true));
+        $db = new PDO('mysql:host=localhost;dbname=u67451', 'u67451', '5546450', array(PDO::ATTR_PERSISTENT => true));
 
         $stmt = $db->prepare("INSERT INTO application SET names = ?, phones = ?, email = ?, dates = ?, gender = ?, biography = ?");
         $stmt->execute([$_POST['names'], $_POST['phone'], $_POST['email'], $_POST['data'], $_POST['gender'], $_POST['biography']]);
