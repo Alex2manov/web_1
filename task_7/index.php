@@ -1,21 +1,13 @@
 <?php
-/**
- * Реализовать возможность входа с паролем и логином с использованием
- * сессии для изменения отправленных данных в предыдущей задаче,
- * пароль и логин генерируются автоматически при первоначальной отправке формы.
- */
 
 header('Content-Type: text/html; charset=UTF-8');
 
-// Начало сессии
 session_start();
 
-// Генерация CSRF-токена при инициализации сессии
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-// Проверка CSRF-токена при обработке формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         die('Неверный CSRF-токен.');
