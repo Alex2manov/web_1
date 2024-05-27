@@ -18,13 +18,12 @@ $errors = FALSE;
 if (empty($_POST['names'])) {
     print('Укажите ФИО.<br/>');
     $errors = TRUE;
-} else {
-    $names = $_POST['names'];
-    if (!preg_match('/^[a-zA-Zа-яА-Я\s]{1,150}$/', $names)) {
-        print('Неверный формат ФИО. Допустимы только буквы и пробелы, не более 150 символов.<br/>');
-        $errors = TRUE;
-    }
+} 
+if (!preg_match('/^[a-zA-Zа-яА-Я\s]{1,150}$/', $names)) {
+    print('Неверный формат ФИО. Допустимы только буквы и пробелы, не более 150 символов.<br/>');
+    $errors = TRUE;
 }
+
 
 if (empty($_POST['phone']) || !preg_match('/^\+?\d{1,15}$/', $_POST['phone'])) {
     print('Укажите корректный телефонный номер.<br/>');
