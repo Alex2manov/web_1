@@ -156,16 +156,18 @@ setcookie('names_value', $_POST['names'], time() + 30 * 24 * 60 * 60);
     setcookie('gender_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
-  setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
+  else {
+    setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
+  }
  
   if (empty($_POST['languages'])) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('languages_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
+  } else {
+    $language_string = is_array($_POST['languages']) ? implode(",", $_POST['languages']) : '';
+    setcookie('languages_value', $language_string, time() + 30 * 24 * 60 * 60);
   }
-  $language_string = implode(",", $_POST['languages']);
-  setcookie('languages_value', $language_string, time() + 30 * 24 * 60 * 60);
-  $languages_array = explode(",", $_COOKIE['languages_value']);
  
   if (empty($_POST['biography'])) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
