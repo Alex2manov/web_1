@@ -150,7 +150,7 @@ setcookie('names_value', $_POST['names'], time() + 30 * 24 * 60 * 60);
     $errors = TRUE;
   }
   setcookie('date_value', $_POST['date'], time() + 30 * 24 * 60 * 60);
- 
+ //Проверяем существование ключей gender и languages в массиве $_POST, прежде чем использовать их.ц
   if (empty($_POST['gender'])) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('gender_error', '1', time() + 24 * 60 * 60);
@@ -159,7 +159,7 @@ setcookie('names_value', $_POST['names'], time() + 30 * 24 * 60 * 60);
   else {
     setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
   }
- 
+ //Проверяет, является ли переменная $_POST['languages'] массивом перед вызовом функции implode.
   if (empty($_POST['languages'])) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('languages_error', '1', time() + 24 * 60 * 60);
